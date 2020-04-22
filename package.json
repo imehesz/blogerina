@@ -1,0 +1,33 @@
+{
+  "name": "blogerina",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "npx riot -c src/riot.config src && parcel build src/main.js -d dist/ && parcel build src/css/main.pcss -d dist/css && rm src/*.riot.js",
+    "watchjs": "parcel watch src/main.js -o dist/main.js",
+    "watchcss": "parcel watch src/css/main.pcss -d dist/css/"
+  },
+  "babel": {
+    "presets": [],
+    "plugins": []
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.5",
+    "postcss-cli": "^7.1.0",
+    "riot": "^4.11.1",
+    "tailwindcss": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@riotjs/cli": "^4.0.0",
+    "@riotjs/parcel-plugin-riot": "4.0.1",
+    "http-server": "^0.12.1",
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4"
+  }
+}

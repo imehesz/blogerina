@@ -1,0 +1,14 @@
+blog-entries
+    div Blog Entries
+    div Cnt: { props.entries.length }
+
+    script.
+        export default function BlogEntries() {
+            console.log("hellop from blog entries")
+            return {
+                // initial component state
+                state: {
+                    entries: []
+                }
+            }
+        }

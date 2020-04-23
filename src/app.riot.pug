@@ -1,2 +1,46 @@
 app 
     h1.text-center.text-4xl { props.message }
+
+    blog-entries( entries="{ state.entries }" )
+
+    script.
+        // on mount, load the latest entries
+        export default function App() {
+            console.log("hello from App")
+
+            let loadEntries = function() {
+                console.log("loading entries ...")
+
+                return [
+                    {
+                        id: 1,
+                        content: "entry 1"
+                    },
+                    {
+                        id: 2,
+                        content: "entry 2"
+                    },
+                    {
+                        id: 3,
+                        content: "entry 3"
+                    }
+                ]
+            }
+
+            return {
+                // initial component state
+                state: {
+                    entries: []
+                },
+
+                onMounted() {
+                    console.log("app mounted, load some entries")
+
+                    setTimeout(() => {
+                        this.update({
+                            entries: loadEntries()
+                        })
+                    }, 3000)
+                }
+            }
+        }

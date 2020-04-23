@@ -1,0 +1,40 @@
+woof
+    div Say woof { props.times } times fast!
+    ul
+        li( each="{ bark in state.barks }" )
+            i woof
+
+    p { state.message }
+
+    button( onclick="{ onClick }") click me
+
+    script.
+        console.log("woof")
+
+        export default function Woof(a) {
+            console.log(this)
+            return {
+                // initial component state
+                state: {
+                    message: 'hi',
+                    barks: []
+                },
+
+                onClick(e) {
+                    this.update({
+                        message: "bye"
+                    })
+                },
+
+                onMounted() {
+                    console.log("mounting", this)
+                    if (this.props.times && this.props.times > 0) {                    
+                        let barks = []
+                        barks.length = this.props.times
+                        this.update({barks})
+
+                        console.log(this.state)
+                    }
+                }
+            }
+        }

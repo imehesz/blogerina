@@ -9,7 +9,10 @@ woof
     button( onclick="{ onClick }") click me
 
     script.
+        let U = require("./Util")
         console.log("woof")
+
+        U.saySomething("SOMETHING")
 
         export default function Woof(a) {
             console.log(this)

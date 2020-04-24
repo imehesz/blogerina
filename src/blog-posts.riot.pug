@@ -1,0 +1,12 @@
+blog-posts
+    div Blog Posts
+    div Cnt: { props.posts.length }
+
+    ul
+        li( each="{ post in props.posts }" )
+            blog-post-short-unformatted( post="{ post }")
+
+    script.
+        export default function BlogPosts() {
+            console.log("hello from blog-posts")
+        }

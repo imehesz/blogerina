@@ -1,15 +1,15 @@
 app 
     h1.text-center.text-4xl { props.message }
 
-    blog-entries( entries="{ state.entries }" )
+    blog-posts( posts="{ state.posts }" )
 
     script.
-        // on mount, load the latest entries
+        // on mount, load the latest posts
         export default function App() {
             console.log("hello from App")
 
-            let loadEntries = function() {
-                console.log("loading entries ...")
+            let loadPosts = function() {
+                console.log("loading posts ...")
 
                 return [
                     {
@@ -30,7 +30,7 @@ app
             return {
                 // initial component state
                 state: {
-                    entries: []
+                    posts: []
                 },
 
                 onMounted() {
@@ -38,7 +38,7 @@ app
 
                     setTimeout(() => {
                         this.update({
-                            entries: loadEntries()
+                            posts: loadPosts()
                         })
                     }, 3000)
                 }

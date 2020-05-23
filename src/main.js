@@ -3,9 +3,11 @@ import App from './app.riot'
 // import Woof from "./woof.riot"
 import BlogPosts from "./blog-posts.riot"
 import BlogPostShortUnformatted from "./blog-post-short-unformatted.riot"
+import Raw from "./raw.riot"
 
 
 // riot.register("woof", Woof)
+riot.register("raw", Raw)
 riot.register("blog-posts", BlogPosts)
 riot.register("blog-post-short-unformatted", BlogPostShortUnformatted)
 

@@ -1,7 +1,21 @@
 blog-post-short-unformatted
-    div { props.post.content }
+    div
+        raw(html="{ marked(props.post.content) }")
+        hr
 
     script.
         export default function BlogPostShortUnformatted() {
+            let U = require("./Util")
+
+
+            // TODO not working yet
+            /*
+            marked.use({
+                renderer: U.StringUtil.plainTextRenderer
+            })
+            */
+
+            this.marked = marked
+
             console.log("hello from blog-post-short-unformatted")
         }
